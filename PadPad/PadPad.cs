@@ -234,7 +234,7 @@ namespace PadPad
 
         private void paddy2019ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("");
+            System.Diagnostics.Process.Start("https://github.com/EnrgyPC/PadPad");
         }
     }
 }
