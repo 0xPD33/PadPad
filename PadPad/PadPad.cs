@@ -231,10 +231,5 @@ namespace PadPad
             e.Graphics.DrawString(text, printFont,
                 Brushes.Black, 10, 10);
         }
-
-        private void paddy2019ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/EnrgyPC/PadPad");
-        }
     }
 }

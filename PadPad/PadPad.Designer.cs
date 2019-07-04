@@ -396,7 +396,6 @@
             this.paddy2019ToolStripMenuItem.Name = "paddy2019ToolStripMenuItem";
             this.paddy2019ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.paddy2019ToolStripMenuItem.Text = "@ Paddy, 2019";
-            this.paddy2019ToolStripMenuItem.Click += new System.EventHandler(this.paddy2019ToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
