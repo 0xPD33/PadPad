@@ -231,5 +231,17 @@ namespace PadPad
             e.Graphics.DrawString(text, printFont,
                 Brushes.Black, 10, 10);
         }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Options optionsMenu = new Options();
+
+            optionsMenu.Show();
+        }
+
+        private void PadPad_Load(object sender, EventArgs e)
+        {
+            //load active color mode
+        }
     }
 }

@@ -1,7 +1,15 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PadPad.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LightMode" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Control</Value>
+    </Setting>
+    <Setting Name="DarkMode" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">30, 30, 30</Value>
+    </Setting>
+    <Setting Name="ActiveMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dark</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

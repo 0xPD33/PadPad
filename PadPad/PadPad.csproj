@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
     <Compile Include="PadPad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PadPad.resx">
       <DependentUpon>PadPad.cs</DependentUpon>
     </EmbeddedResource>

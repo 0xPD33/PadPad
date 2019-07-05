@@ -127,7 +127,7 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -139,7 +139,7 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -151,7 +151,7 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.saveToolStripMenuItem.Text = "Save &As ";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -163,7 +163,7 @@
             this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
@@ -173,7 +173,7 @@
             this.printPreviewToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
             this.printPreviewToolStripMenuItem.Click += new System.EventHandler(this.printPreviewToolStripMenuItem_Click);
             // 
@@ -183,7 +183,7 @@
             this.exitToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -210,7 +210,7 @@
             this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.undoToolStripMenuItem.Text = "&Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -221,7 +221,7 @@
             this.redoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("redoToolStripMenuItem.Image")));
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.redoToolStripMenuItem.Text = "&Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
@@ -233,7 +233,7 @@
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.cutToolStripMenuItem.Text = "Cu&t";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -245,7 +245,7 @@
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.copyToolStripMenuItem.Text = "&Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -257,7 +257,7 @@
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.pasteToolStripMenuItem.Text = "&Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -267,7 +267,7 @@
             this.selectAllToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
             this.selectAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
             // 
@@ -293,7 +293,7 @@
             this.spreadsheetToolStripMenuItem});
             this.insertToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
-            this.insertToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.insertToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.insertToolStripMenuItem.Text = "&Insert";
             // 
             // pictureToolStripMenuItem
@@ -319,7 +319,7 @@
             this.customizeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.customizeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("customizeToolStripMenuItem.Image")));
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // optionsToolStripMenuItem
@@ -328,8 +328,9 @@
             this.optionsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.optionsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("optionsToolStripMenuItem.Image")));
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.optionsToolStripMenuItem.Text = "&Options";
+            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // searchToolStripMenuItem
             // 
@@ -342,7 +343,7 @@
             this.searchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.searchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("searchToolStripMenuItem.Image")));
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.searchToolStripMenuItem.Text = "Search";
             // 
             // findToolStripMenuItem
@@ -394,7 +395,7 @@
             this.paddy2019ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.paddy2019ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.paddy2019ToolStripMenuItem.Name = "paddy2019ToolStripMenuItem";
-            this.paddy2019ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.paddy2019ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.paddy2019ToolStripMenuItem.Text = "@ Paddy, 2019";
             // 
             // toolStrip1
@@ -664,6 +665,7 @@
             this.Name = "PadPad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PadPad";
+            this.Load += new System.EventHandler(this.PadPad_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -676,58 +678,57 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
-        private System.Windows.Forms.ToolStripButton saveAsToolStripButton;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
-        private System.Windows.Forms.ToolStripButton cutToolStripButton;
-        private System.Windows.Forms.ToolStripButton copyToolStripButton;
-        private System.Windows.Forms.ToolStripButton pasteToolStripButton;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton undoStripButton1;
-        private System.Windows.Forms.ToolStripButton redoStripButton1;
-        private System.Windows.Forms.ToolStripMenuItem insertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pictureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spreadsheetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton selectAllButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findAndReplaceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jumpToBottomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jumpToTopToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.ToolStripMenuItem paddy2019ToolStripMenuItem;
         private System.Windows.Forms.Label VersionLabel1;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        public System.Windows.Forms.ToolStrip toolStrip1;
+        public System.Windows.Forms.ToolStripButton newToolStripButton;
+        public System.Windows.Forms.ToolStripButton openToolStripButton;
+        public System.Windows.Forms.ToolStripButton saveAsToolStripButton;
+        public System.Windows.Forms.ToolStripButton printToolStripButton;
+        public System.Windows.Forms.ToolStripButton cutToolStripButton;
+        public System.Windows.Forms.ToolStripButton copyToolStripButton;
+        public System.Windows.Forms.ToolStripButton pasteToolStripButton;
+        public System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
+        public System.Windows.Forms.ToolStripButton undoStripButton1;
+        public System.Windows.Forms.ToolStripButton redoStripButton1;
+        public System.Windows.Forms.ToolStripMenuItem insertToolStripMenuItem;
+        public System.Windows.Forms.ToolStripButton selectAllButton1;
+        public System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        public System.Windows.Forms.StatusStrip statusStrip1;
+        public System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem paddy2019ToolStripMenuItem;
     }
 }
 
