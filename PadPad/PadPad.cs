@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,176 @@ namespace PadPad
         public PadPad()
         {
             InitializeComponent();
-            toolStrip1.Renderer = new ToolStripStripeRemoval(); //initialize ToolStripStripeRemoval class
+            toolStrip1.Renderer = new ToolStripStripeRemoval(); 
+            toolStrip2.Renderer = new ToolStripStripeRemoval();
         }
+
+        #region Editor and General
+
+        #endregion
+
+
+        #region MainMenu
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newToolStrip1Button.PerformClick();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openToolStrip1Button.PerformClick();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveAsToolStrip1Button.PerformClick();
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cutToolStrip1Button.PerformClick();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            copyToolStrip1Button.PerformClick();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pasteToolStrip1Button.PerformClick();
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            undoToolStrip1Button.PerformClick();
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            redoToolStrip1Button.PerformClick();
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectAllToolStrip1Button.PerformClick();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        #endregion
+
+
+        #region Toolbar1
+
+        private void newToolStrip1Button_Click(object sender, EventArgs e)
+        {
+            Document.Clear(); //clear text box
+        }
+
+        private void openToolStrip1Button_Click(object sender, EventArgs e)
+        {
+            if (openWork.ShowDialog() == DialogResult.OK) //if file selected is okay (not used by other applications, etc.)
+            {
+                Document.Clear();
+                Document.LoadFile(openWork.FileName, RichTextBoxStreamType.PlainText);
+            }
+        }
+
+        private void saveToolStrip1Button_Click(object sender, EventArgs e)
+        {
+            if (saveWork.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Document.SaveFile(saveWork.FileName, RichTextBoxStreamType.PlainText);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void cutToolStrip1Button_Click(object sender, EventArgs e)
+        {
+            if (Document.SelectedText != "")
+            {
+                Document.Cut();
+            }
+        }
+
+        private void copyToolStrip1Button_Click(object sender, EventArgs e)
+        {
+            if (Document.SelectionLength > 0)
+            {
+                Document.Copy();
+            }
+        }
+
+        private void pasteToolStrip1Button_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text) == true)
+            {
+                //Determine if any text is selected in the text box.
+                if (Document.SelectionLength > 0)
+                {
+                    Document.SelectionStart = Document.SelectionStart + Document.SelectionLength;
+                }
+                Document.Paste();
+            }
+        }
+
+        private void undoToolStrip1Button_Click(object sender, EventArgs e)
+        {
+            Document.Undo();
+        }
+
+        private void redoToolStrip1Button_Click(object sender, EventArgs e)
+        {
+            Document.Redo();
+        }
+
+        private void selectAllToolStrip1Button_Click(object sender, EventArgs e)
+        {
+            Document.SelectAll();
+        }
+
+        #endregion
+
+
+        #region Toolbar2
+
+        #endregion
+
+
+        #region ContextMenu
+
+        #endregion
+
+
+        #region Methods
+
+        #endregion
+
+
+        #region file
+
+        #endregion
+
+
+        #region edit
+
+        #endregion
+
+
+        #region tools
+
+        #endregion
 
         public int line = 0;
         public int column = 0;
@@ -33,153 +202,25 @@ namespace PadPad
             }
         }
 
-        private void newToolStripButton_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Clear(); //clear text box
-        }
-
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Clear(); //clear text box
-        }
-
-        private void openToolStripButton_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openfile = new OpenFileDialog(); //create Open File dialog
-            openfile.Title = "Open file.."; 
-            if (openfile.ShowDialog() == DialogResult.OK) //if file selected is okay (not used by other applications, etc.)
-            {
-                richTextBox1.Clear(); //clear text box before loading
-                using (StreamReader sr = new StreamReader(openfile.FileName)) //reads file
-                {
-                    richTextBox1.Text = sr.ReadToEnd(); 
-                    sr.Close();
-                }
-            }
-        }
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openToolStripButton.PerformClick();
-        }
-
-        private void saveToolStripButton_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog savefile = new SaveFileDialog(); //create Save File dialog
-            savefile.Title = "Save file as.."; 
-            if (savefile.ShowDialog() == DialogResult.OK) //if file selected is okay (not used by other applications, etc.)
-            {
-                StreamWriter txtoutput = new StreamWriter(savefile.FileName); //text output to save file name
-                txtoutput.Write(richTextBox1.Text); //save text
-                txtoutput.Close(); //closes output
-            }
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            saveAsToolStripButton.PerformClick();
-        }
-
-        //print code here
-
-        private void cutToolStripButton_Click(object sender, EventArgs e)
-        {
-            if (richTextBox1.SelectedText != "")
-            {
-                richTextBox1.Cut();
-            }
-        }
-
-        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cutToolStripButton.PerformClick();
-        }
-
-        private void copyToolStripButton_Click(object sender, EventArgs e)
-        {
-            if(richTextBox1.SelectionLength > 0)
-            {
-                richTextBox1.Copy();
-            }
-        }
-
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            copyToolStripButton.PerformClick();
-        }
-
-        private void pasteToolStripButton_Click(object sender, EventArgs e)
-        {
-            if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text) == true)
-            {
-                // Determine if any text is selected in the text box.
-                if (richTextBox1.SelectionLength > 0)
-                {
-                    richTextBox1.SelectionStart = richTextBox1.SelectionStart + richTextBox1.SelectionLength;
-                }
-                richTextBox1.Paste();
-            }
-        }
-
-        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pasteToolStripButton.PerformClick();
-        }
-
-        private void undoStripButton1_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Undo();
-        }
-
-        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            undoStripButton1.PerformClick();
-        }
-
-        private void redoStripButton1_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Redo();
-        }
-
-        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            redoStripButton1.PerformClick();
-        }
-
-        private void selectAllButton1_Click(object sender, EventArgs e)
-        {
-            richTextBox1.SelectAll();
-        }
-
-        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            selectAllButton1.PerformClick();
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         //cursor map
         private void timer1_Tick(object sender, EventArgs e)
         {
-            line = 1 + richTextBox1.GetLineFromCharIndex(richTextBox1.GetFirstCharIndexOfCurrentLine());
-            column = 1 + richTextBox1.SelectionStart - richTextBox1.GetFirstCharIndexOfCurrentLine();
-            toolStripStatusLabel1.Text = "Line: " + line.ToString();
-            toolStripStatusLabel2.Text = "Column: " + column.ToString();
+            line = 1 + Document.GetLineFromCharIndex(Document.GetFirstCharIndexOfCurrentLine());
+            column = 1 + Document.SelectionStart - Document.GetFirstCharIndexOfCurrentLine();
+            statusLabel1.Text = "Line: " + line.ToString();
+            statusLabel2.Text = "Column: " + column.ToString();
         }
 
         private void jumpToTopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            richTextBox1.SelectionStart = 0; 
-            richTextBox1.ScrollToCaret();
+            Document.SelectionStart = 0; 
+            Document.ScrollToCaret();
         }
 
         private void jumpToBottomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
+            Document.SelectionStart = Document.Text.Length;
+            Document.ScrollToCaret();
         }
 
         private System.Drawing.Printing.PrintDocument docToPrint =
@@ -198,13 +239,13 @@ namespace PadPad
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawString(richTextBox1.Text, richTextBox1.Font, Brushes.Black, 100, 20);
+            e.Graphics.DrawString(Document.Text, Document.Font, Brushes.Black, 100, 20);
             e.Graphics.PageUnit = GraphicsUnit.Inch;
         }
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            printToolStripButton.PerformClick();
+            printToolStrip1Button.PerformClick();
         }
 
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -223,7 +264,7 @@ namespace PadPad
 
         private void printDocument1_PrintPage_1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            string text = richTextBox1.Text;
+            string text = Document.Text;
             Font printFont = new Font
                 ("Liberation Sans", 12, FontStyle.Regular);
 
@@ -242,6 +283,39 @@ namespace PadPad
         private void PadPad_Load(object sender, EventArgs e)
         {
             //load active color mode
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void boldContextMenu_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void italicContextMenu_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void cutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cutToolStrip1Button.PerformClick();
+        }
+
+        private void copyContextMenu_Click(object sender, EventArgs e)
+        {
+            copyToolStrip1Button.PerformClick();
+        }
+
+        private void pasteContextMenu_Click(object sender, EventArgs e)
+        {
+            pasteToolStrip1Button.PerformClick();
+        }
+
+        private void selectAllContextMenu_Click(object sender, EventArgs e)
+        {
+            selectAllToolStrip1Button.PerformClick();
         }
     }
 }

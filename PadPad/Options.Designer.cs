@@ -49,10 +49,10 @@
             // lightModeCheckBox1
             // 
             this.lightModeCheckBox1.AutoSize = true;
-            this.lightModeCheckBox1.Font = new System.Drawing.Font("Liberation Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lightModeCheckBox1.Font = new System.Drawing.Font("Liberation Sans", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lightModeCheckBox1.Location = new System.Drawing.Point(3, 3);
             this.lightModeCheckBox1.Name = "lightModeCheckBox1";
-            this.lightModeCheckBox1.Size = new System.Drawing.Size(86, 18);
+            this.lightModeCheckBox1.Size = new System.Drawing.Size(97, 21);
             this.lightModeCheckBox1.TabIndex = 0;
             this.lightModeCheckBox1.Text = "Light Mode";
             this.lightModeCheckBox1.UseVisualStyleBackColor = true;
