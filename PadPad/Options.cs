@@ -121,8 +121,8 @@ namespace PadPad
                 PadPad.pasteToolStrip1Button.ForeColor = Properties.Settings.Default.DarkMode;
                 PadPad.Document.BackColor = Properties.Settings.Default.LightMode;
                 PadPad.Document.ForeColor = Properties.Settings.Default.DarkMode;
-                PadPad.contextMenuStrip1.BackColor = Properties.Settings.Default.LightMode;
-                PadPad.contextMenuStrip1.ForeColor = Properties.Settings.Default.DarkMode;
+                PadPad.contextMenu.BackColor = Properties.Settings.Default.LightMode;
+                PadPad.contextMenu.ForeColor = Properties.Settings.Default.DarkMode;
                 PadPad.statusStrip1.BackColor = Properties.Settings.Default.LightMode;
                 PadPad.statusStrip1.ForeColor = Properties.Settings.Default.DarkMode;
                 PadPad.statusLabel1.BackColor = Properties.Settings.Default.LightMode;
@@ -131,8 +131,8 @@ namespace PadPad
                 PadPad.statusLabel2.ForeColor = Properties.Settings.Default.DarkMode;
                 PadPad.VersionLabel1.BackColor = Properties.Settings.Default.LightMode;
                 PadPad.VersionLabel1.ForeColor = Properties.Settings.Default.DarkMode;
-                PadPad.boldContextMenu.BackColor = Properties.Settings.Default.LightMode;
-                PadPad.boldContextMenu.ForeColor = Properties.Settings.Default.DarkMode;
+                PadPad.strikethroughContextMenu.BackColor = Properties.Settings.Default.LightMode;
+                PadPad.strikethroughContextMenu.ForeColor = Properties.Settings.Default.DarkMode;
                 PadPad.italicContextMenu.BackColor = Properties.Settings.Default.LightMode;
                 PadPad.italicContextMenu.ForeColor = Properties.Settings.Default.DarkMode;
                 PadPad.underlineContextMenu.BackColor = Properties.Settings.Default.LightMode;
@@ -239,8 +239,8 @@ namespace PadPad
                 PadPad.pasteToolStrip1Button.ForeColor = Properties.Settings.Default.LightMode;
                 PadPad.Document.BackColor = Properties.Settings.Default.DarkMode;
                 PadPad.Document.ForeColor = Properties.Settings.Default.LightMode;
-                PadPad.contextMenuStrip1.BackColor = Properties.Settings.Default.DarkMode;
-                PadPad.contextMenuStrip1.ForeColor = Properties.Settings.Default.LightMode;
+                PadPad.contextMenu.BackColor = Properties.Settings.Default.DarkMode;
+                PadPad.contextMenu.ForeColor = Properties.Settings.Default.LightMode;
                 PadPad.statusStrip1.BackColor = Properties.Settings.Default.DarkMode;
                 PadPad.statusStrip1.ForeColor = Properties.Settings.Default.LightMode;
                 PadPad.statusLabel1.BackColor = Properties.Settings.Default.DarkMode;
@@ -249,8 +249,8 @@ namespace PadPad
                 PadPad.statusLabel2.ForeColor = Properties.Settings.Default.LightMode;
                 PadPad.VersionLabel1.BackColor = Properties.Settings.Default.DarkMode;
                 PadPad.VersionLabel1.ForeColor = Properties.Settings.Default.LightMode;
-                PadPad.boldContextMenu.BackColor = Properties.Settings.Default.DarkMode;
-                PadPad.boldContextMenu.ForeColor = Properties.Settings.Default.LightMode;
+                PadPad.strikethroughContextMenu.BackColor = Properties.Settings.Default.DarkMode;
+                PadPad.strikethroughContextMenu.ForeColor = Properties.Settings.Default.LightMode;
                 PadPad.italicContextMenu.BackColor = Properties.Settings.Default.DarkMode;
                 PadPad.italicContextMenu.ForeColor = Properties.Settings.Default.LightMode;
                 PadPad.underlineContextMenu.BackColor = Properties.Settings.Default.DarkMode;
@@ -279,5 +279,6 @@ namespace PadPad
         {
             Hide();
         }
+
     }
 }

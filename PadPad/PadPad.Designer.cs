@@ -72,7 +72,8 @@
             this.redoToolStrip1Button = new System.Windows.Forms.ToolStripButton();
             this.selectAllToolStrip1Button = new System.Windows.Forms.ToolStripButton();
             this.Document = new System.Windows.Forms.RichTextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.fontContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.boldContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.italicContextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.underlineContextMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,7 +113,7 @@
             this.saveWork = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -601,6 +602,7 @@
             this.Document.AcceptsTab = true;
             this.Document.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.Document.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Document.ContextMenuStrip = this.contextMenu;
             this.Document.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Document.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Document.EnableAutoDragDrop = true;
@@ -611,27 +613,37 @@
             this.Document.TabIndex = 3;
             this.Document.Text = "";
             // 
-            // contextMenuStrip1
+            // contextMenu
             // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Liberation Sans", 9.5F);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.boldContextMenu,
-            this.italicContextMenu,
-            this.underlineContextMenu,
-            this.strikethroughContextMenu,
+            this.contextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.contextMenu.Font = new System.Drawing.Font("Liberation Sans", 9.5F);
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fontContextMenu,
             this.toolStripSeparator5,
             this.cutContextMenu,
             this.copyContextMenu,
             this.pasteContextMenu,
             this.selectAllContextMenu});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 186);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.contextMenu.Name = "contextMenuStrip1";
+            this.contextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.contextMenu.ShowImageMargin = false;
+            this.contextMenu.Size = new System.Drawing.Size(105, 120);
+            // 
+            // fontContextMenu
+            // 
+            this.fontContextMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.boldContextMenu,
+            this.italicContextMenu,
+            this.underlineContextMenu,
+            this.strikethroughContextMenu});
+            this.fontContextMenu.ForeColor = System.Drawing.SystemColors.Control;
+            this.fontContextMenu.Name = "fontContextMenu";
+            this.fontContextMenu.Size = new System.Drawing.Size(104, 22);
+            this.fontContextMenu.Text = "Font";
             // 
             // boldContextMenu
             // 
+            this.boldContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.boldContextMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.boldContextMenu.Name = "boldContextMenu";
             this.boldContextMenu.Size = new System.Drawing.Size(151, 22);
@@ -640,6 +652,7 @@
             // 
             // italicContextMenu
             // 
+            this.italicContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.italicContextMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.italicContextMenu.Name = "italicContextMenu";
             this.italicContextMenu.Size = new System.Drawing.Size(151, 22);
@@ -648,37 +661,41 @@
             // 
             // underlineContextMenu
             // 
+            this.underlineContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.underlineContextMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.underlineContextMenu.Name = "underlineContextMenu";
             this.underlineContextMenu.Size = new System.Drawing.Size(151, 22);
             this.underlineContextMenu.Text = "Underline";
+            this.underlineContextMenu.Click += new System.EventHandler(this.underlineContextMenu_Click);
             // 
             // strikethroughContextMenu
             // 
+            this.strikethroughContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.strikethroughContextMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.strikethroughContextMenu.Name = "strikethroughContextMenu";
             this.strikethroughContextMenu.Size = new System.Drawing.Size(151, 22);
             this.strikethroughContextMenu.Text = "Strikethrough";
+            this.strikethroughContextMenu.Click += new System.EventHandler(this.strikethroughContextMenu_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(148, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(101, 6);
             // 
             // cutContextMenu
             // 
             this.cutContextMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.cutContextMenu.Name = "cutContextMenu";
-            this.cutContextMenu.Size = new System.Drawing.Size(151, 22);
+            this.cutContextMenu.Size = new System.Drawing.Size(104, 22);
             this.cutContextMenu.Text = "Cut";
-            this.cutContextMenu.Click += new System.EventHandler(this.cutToolStripMenuItem1_Click);
+            this.cutContextMenu.Click += new System.EventHandler(this.cutContextMenu_Click);
             // 
             // copyContextMenu
             // 
             this.copyContextMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.copyContextMenu.Name = "copyContextMenu";
-            this.copyContextMenu.Size = new System.Drawing.Size(151, 22);
+            this.copyContextMenu.Size = new System.Drawing.Size(104, 22);
             this.copyContextMenu.Text = "Copy";
             this.copyContextMenu.Click += new System.EventHandler(this.copyContextMenu_Click);
             // 
@@ -686,7 +703,7 @@
             // 
             this.pasteContextMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.pasteContextMenu.Name = "pasteContextMenu";
-            this.pasteContextMenu.Size = new System.Drawing.Size(151, 22);
+            this.pasteContextMenu.Size = new System.Drawing.Size(104, 22);
             this.pasteContextMenu.Text = "Paste";
             this.pasteContextMenu.Click += new System.EventHandler(this.pasteContextMenu_Click);
             // 
@@ -694,7 +711,7 @@
             // 
             this.selectAllContextMenu.ForeColor = System.Drawing.SystemColors.Control;
             this.selectAllContextMenu.Name = "selectAllContextMenu";
-            this.selectAllContextMenu.Size = new System.Drawing.Size(151, 22);
+            this.selectAllContextMenu.Size = new System.Drawing.Size(104, 22);
             this.selectAllContextMenu.Text = "Select All";
             this.selectAllContextMenu.Click += new System.EventHandler(this.selectAllContextMenu_Click);
             // 
@@ -761,7 +778,7 @@
             this.VersionLabel1.Name = "VersionLabel1";
             this.VersionLabel1.Size = new System.Drawing.Size(111, 15);
             this.VersionLabel1.TabIndex = 5;
-            this.VersionLabel1.Text = "Version: InDev 0.1";
+            this.VersionLabel1.Text = "Version: InDev 0.2";
             // 
             // toolStrip2
             // 
@@ -809,6 +826,7 @@
             this.toolStrip2BoldButton.Size = new System.Drawing.Size(30, 25);
             this.toolStrip2BoldButton.Text = "B";
             this.toolStrip2BoldButton.ToolTipText = "Bold";
+            this.toolStrip2BoldButton.Click += new System.EventHandler(this.toolStrip2BoldButton_Click);
             // 
             // toolStrip2ItalicButton
             // 
@@ -823,6 +841,7 @@
             this.toolStrip2ItalicButton.Size = new System.Drawing.Size(24, 25);
             this.toolStrip2ItalicButton.Text = "I";
             this.toolStrip2ItalicButton.ToolTipText = "Italic";
+            this.toolStrip2ItalicButton.Click += new System.EventHandler(this.toolStrip2ItalicButton_Click);
             // 
             // toolStrip2UnderlineButton
             // 
@@ -837,6 +856,7 @@
             this.toolStrip2UnderlineButton.Size = new System.Drawing.Size(30, 25);
             this.toolStrip2UnderlineButton.Text = "U";
             this.toolStrip2UnderlineButton.ToolTipText = "Underline";
+            this.toolStrip2UnderlineButton.Click += new System.EventHandler(this.toolStrip2UnderlineButton_Click);
             // 
             // toolStrip2StrikethroughButton
             // 
@@ -851,6 +871,7 @@
             this.toolStrip2StrikethroughButton.Size = new System.Drawing.Size(30, 25);
             this.toolStrip2StrikethroughButton.Text = "S";
             this.toolStrip2StrikethroughButton.ToolTipText = "Strikethrough";
+            this.toolStrip2StrikethroughButton.Click += new System.EventHandler(this.toolStrip2StrikethroughButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -870,6 +891,7 @@
             this.toolStrip2AlignLeft.Size = new System.Drawing.Size(29, 25);
             this.toolStrip2AlignLeft.Text = "L";
             this.toolStrip2AlignLeft.ToolTipText = "Align Left";
+            this.toolStrip2AlignLeft.Click += new System.EventHandler(this.toolStrip2AlignLeft_Click);
             // 
             // toolStrip2AlignCenter
             // 
@@ -884,6 +906,7 @@
             this.toolStrip2AlignCenter.Size = new System.Drawing.Size(30, 25);
             this.toolStrip2AlignCenter.Text = "C";
             this.toolStrip2AlignCenter.ToolTipText = "Align Center";
+            this.toolStrip2AlignCenter.Click += new System.EventHandler(this.toolStrip2AlignCenter_Click);
             // 
             // toolStrip2AlignRight
             // 
@@ -898,6 +921,7 @@
             this.toolStrip2AlignRight.Size = new System.Drawing.Size(30, 25);
             this.toolStrip2AlignRight.Text = "R";
             this.toolStrip2AlignRight.ToolTipText = "Align Right";
+            this.toolStrip2AlignRight.Click += new System.EventHandler(this.toolStrip2AlignRight_Click);
             // 
             // toolStripSeparator2
             // 
@@ -917,6 +941,7 @@
             this.toolStrip2Uppercase.Size = new System.Drawing.Size(30, 25);
             this.toolStrip2Uppercase.Text = "A";
             this.toolStrip2Uppercase.ToolTipText = "UPPERCASE";
+            this.toolStrip2Uppercase.Click += new System.EventHandler(this.toolStrip2Uppercase_Click);
             // 
             // toolStrip2Lowercase
             // 
@@ -931,6 +956,7 @@
             this.toolStrip2Lowercase.Size = new System.Drawing.Size(29, 25);
             this.toolStrip2Lowercase.Text = "a";
             this.toolStrip2Lowercase.ToolTipText = "lowercase";
+            this.toolStrip2Lowercase.Click += new System.EventHandler(this.toolStrip2Lowercase_Click);
             // 
             // toolStripSeparator3
             // 
@@ -950,6 +976,7 @@
             this.toolStrip2ZoomIn.Size = new System.Drawing.Size(29, 25);
             this.toolStrip2ZoomIn.Text = "+";
             this.toolStrip2ZoomIn.ToolTipText = "Zoom In";
+            this.toolStrip2ZoomIn.Click += new System.EventHandler(this.toolStrip2ZoomIn_Click);
             // 
             // toolStrip2ZoomOut
             // 
@@ -964,6 +991,7 @@
             this.toolStrip2ZoomOut.Size = new System.Drawing.Size(25, 25);
             this.toolStrip2ZoomOut.Text = "-";
             this.toolStrip2ZoomOut.ToolTipText = "Zoom Out";
+            this.toolStrip2ZoomOut.Click += new System.EventHandler(this.toolStrip2ZoomOut_Click);
             // 
             // toolStripSeparator4
             // 
@@ -974,6 +1002,7 @@
             // 
             this.toolStrip2FontBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
             this.toolStrip2FontBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStrip2FontBox.DropDownWidth = 100;
             this.toolStrip2FontBox.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.toolStrip2FontBox.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStrip2FontBox.Margin = new System.Windows.Forms.Padding(0);
@@ -981,6 +1010,7 @@
             this.toolStrip2FontBox.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.toolStrip2FontBox.Size = new System.Drawing.Size(145, 25);
             this.toolStrip2FontBox.ToolTipText = "Change Font";
+            this.toolStrip2FontBox.SelectedIndexChanged += new System.EventHandler(this.toolStrip2FontBox_SelectedIndexChanged);
             // 
             // toolStrip2FontSizeBox
             // 
@@ -994,6 +1024,7 @@
             this.toolStrip2FontSizeBox.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.toolStrip2FontSizeBox.Size = new System.Drawing.Size(75, 25);
             this.toolStrip2FontSizeBox.ToolTipText = "Change Font Size";
+            this.toolStrip2FontSizeBox.SelectedIndexChanged += new System.EventHandler(this.toolStrip2FontSizeBox_SelectedIndexChanged);
             // 
             // openWork
             // 
@@ -1012,6 +1043,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ContextMenuStrip = this.contextMenu;
             this.Controls.Add(this.Document);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.VersionLabel1);
@@ -1030,7 +1062,7 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenu.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
@@ -1091,11 +1123,7 @@
         public System.Windows.Forms.ToolStripStatusLabel statusLabel1;
         public System.Windows.Forms.ToolStripStatusLabel statusLabel2;
         public System.Windows.Forms.Label VersionLabel1;
-        public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        public System.Windows.Forms.ToolStripMenuItem boldContextMenu;
-        public System.Windows.Forms.ToolStripMenuItem italicContextMenu;
-        public System.Windows.Forms.ToolStripMenuItem underlineContextMenu;
-        public System.Windows.Forms.ToolStripMenuItem strikethroughContextMenu;
+        public System.Windows.Forms.ContextMenuStrip contextMenu;
         public System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.OpenFileDialog openWork;
         private System.Windows.Forms.SaveFileDialog saveWork;
@@ -1121,6 +1149,11 @@
         public System.Windows.Forms.ToolStripMenuItem copyContextMenu;
         public System.Windows.Forms.ToolStripMenuItem pasteContextMenu;
         public System.Windows.Forms.ToolStripMenuItem selectAllContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem fontContextMenu;
+        public System.Windows.Forms.ToolStripMenuItem strikethroughContextMenu;
+        public System.Windows.Forms.ToolStripMenuItem boldContextMenu;
+        public System.Windows.Forms.ToolStripMenuItem italicContextMenu;
+        public System.Windows.Forms.ToolStripMenuItem underlineContextMenu;
     }
 }
 

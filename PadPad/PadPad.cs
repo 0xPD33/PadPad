@@ -14,14 +14,46 @@ namespace PadPad
 {
     public partial class PadPad : Form
     {
+
+        #region Editor and General
+
+        private System.Drawing.Printing.PrintDocument docToPrint =
+        new System.Drawing.Printing.PrintDocument();
+
         public PadPad()
         {
             InitializeComponent();
-            toolStrip1.Renderer = new ToolStripStripeRemoval(); 
+            toolStrip1.Renderer = new ToolStripStripeRemoval();
             toolStrip2.Renderer = new ToolStripStripeRemoval();
         }
 
-        #region Editor and General
+        private void PadPad_Load(object sender, EventArgs e)
+        {
+            FontSize();
+            InstalledFonts();
+        }
+
+        #endregion
+
+        #region Methods
+
+        void FontSize()
+        {
+            for (int fntSize = 10; fntSize <= 75; fntSize++)
+            {
+                toolStrip2FontSizeBox.Items.Add(fntSize.ToString());
+            }
+        }
+
+        void InstalledFonts()
+        {
+            InstalledFontCollection fonts = new InstalledFontCollection();
+
+            for (int i = 0; i < fonts.Families.Length; i++)
+            {
+                toolStrip2FontBox.Items.Add(fonts.Families[i].Name);
+            }
+        }
 
         #endregion
 
@@ -76,6 +108,39 @@ namespace PadPad
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void jumpToTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Document.SelectionStart = 0;
+            Document.ScrollToCaret();
+        }
+
+        private void jumpToBottomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Document.SelectionStart = Document.Text.Length;
+            Document.ScrollToCaret();
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            printToolStrip1Button.PerformClick();
+        }
+
+        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Associate PrintPreviewDialog with PrintDocument.
+            printPreviewDialog1.Document = printDocument1;
+
+            // Show PrintPreview Dialog
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Options optionsMenu = new Options();
+
+            optionsMenu.Show();
         }
 
         #endregion
@@ -156,35 +221,227 @@ namespace PadPad
             Document.SelectAll();
         }
 
+        protected void printToolStripButton_Click(object sender, System.EventArgs e)
+        {
+            //PrintDialog associate with PrintDocument;
+            printDialog1.Document = printDocument1;
+
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
+
         #endregion
 
 
         #region Toolbar2
 
-        #endregion
+        private void toolStrip2ZoomIn_Click(object sender, EventArgs e)
+        {
+            if (Document.ZoomFactor == 63)
+            {
+                return;
+            }
+            else
+            {
+                Document.ZoomFactor = Document.ZoomFactor + 1;
+            }
+        }
 
+        private void toolStrip2ZoomOut_Click(object sender, EventArgs e)
+        {
+            if (Document.ZoomFactor == 1)
+            {
+                return;
+            }
+            else
+            {
+                Document.ZoomFactor = Document.ZoomFactor - 1;
+            }
+        }
+
+        //need to find another way of combining font styles
+
+        private void toolStrip2BoldButton_Click(object sender, EventArgs e)
+        {
+            Font bfont = new Font(Document.Font, FontStyle.Bold);
+            Font ifont = new Font(Document.Font, FontStyle.Italic);
+            Font rfont = new Font(Document.Font, FontStyle.Regular);
+            Font ibfont = new Font(Document.Font, FontStyle.Bold | FontStyle.Italic);
+
+            if (Document.SelectedText.Length != 0)
+            {
+                if (Document.SelectionFont.Bold)
+                {
+                    Document.SelectionFont = rfont;
+                }
+                else if (Document.SelectionFont.Italic)
+                {
+                    Document.SelectionFont = ibfont; //set bold and italic
+                }
+                else
+                {
+                    Document.SelectionFont = bfont;
+                }
+            }
+            else
+                return;
+        }
+
+        private void toolStrip2ItalicButton_Click(object sender, EventArgs e)
+        {
+            Font bfont = new Font(Document.Font, FontStyle.Bold);
+            Font ifont = new Font(Document.Font, FontStyle.Italic);
+            Font rfont = new Font(Document.Font, FontStyle.Regular);
+            Font ibfont = new Font(Document.Font, FontStyle.Bold | FontStyle.Italic);
+
+            if (Document.SelectedText.Length != 0)
+            {
+                if (Document.SelectionFont.Italic)
+                {
+                    Document.SelectionFont = rfont;
+                }
+                else if (Document.SelectionFont.Bold)
+                {
+                    Document.SelectionFont = ibfont; //set bold and italic
+                }
+                else
+                {
+                    Document.SelectionFont = ifont;
+                }
+            }
+            else
+                return;
+        }
+
+        private void toolStrip2UnderlineButton_Click(object sender, EventArgs e)
+        {
+            Font bfont = new Font(Document.Font, FontStyle.Bold);
+            Font ifont = new Font(Document.Font, FontStyle.Italic);
+            Font rfont = new Font(Document.Font, FontStyle.Regular);
+            Font ufont = new Font(Document.Font, FontStyle.Underline);
+            Font ubfont = new Font(Document.Font, FontStyle.Bold | FontStyle.Underline);
+            Font iufont = new Font(Document.Font, FontStyle.Italic | FontStyle.Underline);
+
+            if (Document.SelectedText.Length != 0)
+            {
+                if (Document.SelectionFont.Underline)
+                {
+                    Document.SelectionFont = rfont;
+                }
+                else if (Document.SelectionFont.Bold)
+                {
+                    Document.SelectionFont = ubfont; //set underline and bold
+                }
+                else if (Document.SelectionFont.Italic)
+                {
+                    Document.SelectionFont = iufont; //set italic and underline
+                }
+                else
+                {
+                    Document.SelectionFont = ufont;
+                }
+            }
+            else
+                return;
+        }
+
+        private void toolStrip2StrikethroughButton_Click(object sender, EventArgs e)
+        {
+            Font bfont = new Font(Document.Font, FontStyle.Bold);
+            Font ifont = new Font(Document.Font, FontStyle.Italic);
+            Font rfont = new Font(Document.Font, FontStyle.Regular);
+            Font sfont = new Font(Document.Font, FontStyle.Strikeout);
+            Font bsfont = new Font(Document.Font, FontStyle.Bold | FontStyle.Strikeout);
+
+            if (Document.SelectedText.Length != 0)
+            {
+                if (Document.SelectionFont.Strikeout)
+                {
+                    Document.SelectionFont = rfont;
+                }
+                else if (Document.SelectionFont.Bold)
+                {
+                    Document.SelectionFont = bsfont; //set underline and bold
+                }
+                else
+                {
+                    Document.SelectionFont = sfont;
+                }
+            }
+            else
+                return;
+        }
+
+        private void toolStrip2AlignLeft_Click(object sender, EventArgs e)
+        {
+            Document.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void toolStrip2AlignCenter_Click(object sender, EventArgs e)
+        {
+            Document.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void toolStrip2AlignRight_Click(object sender, EventArgs e)
+        {
+            Document.SelectionAlignment = HorizontalAlignment.Right;
+        }
+
+        private void toolStrip2Uppercase_Click(object sender, EventArgs e)
+        {
+            Document.SelectedText = Document.SelectedText.ToUpper();
+        }
+
+        private void toolStrip2Lowercase_Click(object sender, EventArgs e)
+        {
+            Document.SelectedText = Document.SelectedText.ToLower();
+        }
+
+        #endregion
 
         #region ContextMenu
 
-        #endregion
+        private void boldContextMenu_Click(object sender, EventArgs e)
+        {
+            toolStrip2BoldButton.PerformClick();
+        }
 
+        private void italicContextMenu_Click(object sender, EventArgs e)
+        {
+            toolStrip2ItalicButton.PerformClick();
+        }
 
-        #region Methods
+        private void underlineContextMenu_Click(object sender, EventArgs e)
+        {
+            toolStrip2UnderlineButton.PerformClick();
+        }
 
-        #endregion
+        private void strikethroughContextMenu_Click(object sender, EventArgs e)
+        {
+            toolStrip2StrikethroughButton.PerformClick();
+        }
 
+        private void cutContextMenu_Click(object sender, EventArgs e)
+        {
+            cutToolStrip1Button.PerformClick();
+        }
 
-        #region file
+        private void copyContextMenu_Click(object sender, EventArgs e)
+        {
+            copyToolStrip1Button.PerformClick();
+        }
 
-        #endregion
+        private void pasteContextMenu_Click(object sender, EventArgs e)
+        {
+            pasteToolStrip1Button.PerformClick();
+        }
 
-
-        #region edit
-
-        #endregion
-
-
-        #region tools
+        private void selectAllContextMenu_Click(object sender, EventArgs e)
+        {
+            selectAllToolStrip1Button.PerformClick();
+        }
 
         #endregion
 
@@ -211,50 +468,10 @@ namespace PadPad
             statusLabel2.Text = "Column: " + column.ToString();
         }
 
-        private void jumpToTopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Document.SelectionStart = 0; 
-            Document.ScrollToCaret();
-        }
-
-        private void jumpToBottomToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Document.SelectionStart = Document.Text.Length;
-            Document.ScrollToCaret();
-        }
-
-        private System.Drawing.Printing.PrintDocument docToPrint =
-            new System.Drawing.Printing.PrintDocument();
-
-        protected void printToolStripButton_Click(object sender, System.EventArgs e)
-        {
-            //PrintDialog associate with PrintDocument;
-            printDialog1.Document = printDocument1;
-
-            if (printDialog1.ShowDialog() == DialogResult.OK)
-            {
-                printDocument1.Print();
-            }
-        }
-
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawString(Document.Text, Document.Font, Brushes.Black, 100, 20);
             e.Graphics.PageUnit = GraphicsUnit.Inch;
-        }
-
-        private void printToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            printToolStrip1Button.PerformClick();
-        }
-
-        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Associate PrintPreviewDialog with PrintDocument.
-            printPreviewDialog1.Document = printDocument1;
-
-            // Show PrintPreview Dialog
-            printPreviewDialog1.ShowDialog();
         }
 
         private void printPreviewDialog1_Load(object sender, EventArgs e)
@@ -273,49 +490,25 @@ namespace PadPad
                 Brushes.Black, 10, 10);
         }
 
-        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStrip2FontBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options optionsMenu = new Options();
+            Font ComboFonts = null;
 
-            optionsMenu.Show();
+            try
+            {
+                ComboFonts = Document.SelectionFont;
+                Document.SelectionFont = new Font(toolStrip2FontBox.Text, Document.SelectionFont.Size, Document.SelectionFont.Style);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
-        private void PadPad_Load(object sender, EventArgs e)
+        private void toolStrip2FontSizeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //load active color mode
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void boldContextMenu_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void italicContextMenu_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void cutToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            cutToolStrip1Button.PerformClick();
-        }
-
-        private void copyContextMenu_Click(object sender, EventArgs e)
-        {
-            copyToolStrip1Button.PerformClick();
-        }
-
-        private void pasteContextMenu_Click(object sender, EventArgs e)
-        {
-            pasteToolStrip1Button.PerformClick();
-        }
-
-        private void selectAllContextMenu_Click(object sender, EventArgs e)
-        {
-            selectAllToolStrip1Button.PerformClick();
+            Document.SelectionFont = new Font(toolStrip2FontSizeBox.SelectedItem.ToString(), int.Parse(toolStrip2FontSizeBox.SelectedItem.ToString()),                                                          Document.SelectionFont.Style);
         }
     }
 }
